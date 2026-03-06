@@ -1,0 +1,72 @@
+<!-- (Weather Web Application using JavaScript and Public API)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather App</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 60px;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+</style>
+
+<script>
+async function getWeather() {
+    var city = document.getElementById("city").value;
+    var apiKey = "8da3d48b40b5b425db7c714005f48c8b";
+    var url = "https://api.openweathermap.org/data/2.5/weather?q=" 
+              + city + "&appid=" + apiKey + "&units=metric";
+
+    try {
+        var response = await fetch(url);
+        var data = await response.json();
+
+        document.getElementById("result").innerHTML =
+            "Temperature: " + data.main.temp + "°C<br>" +
+            "Condition: " + data.weather[0].description + "<br>" +
+            "Humidity: " + data.main.humidity + "%<br>" +
+            "Wind Speed: " + data.wind.speed + " m/s";
+    } catch (error) {
+        document.getElementById("result").innerHTML = "City not found!";
+    }
+}
+</script>
+</head>
+
+<body>
+
+<h2>Weather Application</h2>
+
+<input type="text" id="city" placeholder="Enter city name">
+<button onclick="getWeather()">Get Weather</button>
+
+<div id="result"></div>
+
+</body>
+</html>

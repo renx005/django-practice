@@ -1,0 +1,66 @@
+<!-- (Implement CSS Animations and Transitions on Webpage Elements)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Animation and Transition</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Animated Box */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 20px auto;
+    animation: moveBox 3s infinite alternate;
+}
+
+/* Keyframes for Animation */
+@keyframes moveBox {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(300px);
+    }
+}
+
+/* Button Transition */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.3s;
+}
+
+button:hover {
+    background-color: green;
+    transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<h2>CSS Animation and Transition Demo</h2>
+
+<div class="box"></div>
+
+<button>Hover Me</button>
+
+</body>
+</html>

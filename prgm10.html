@@ -1,0 +1,55 @@
+<!-- (Implement Dropdown-Based Content Rendering using JavaScript)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dropdown Content Rendering</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 80px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#content {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+</style>
+
+<script>
+function showContent() {
+    var value = document.getElementById("options").value;
+    document.getElementById("content").innerHTML = "You selected: " + value;
+}
+</script>
+</head>
+
+<body>
+
+<h2>Choose a Subject</h2>
+
+<select id="options" onchange="showContent()">
+    <option value="">-- Select --</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+</select>
+
+<div id="content"></div>
+
+</body>
+</html>

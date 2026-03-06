@@ -1,0 +1,89 @@
+<!-- (Write a JavaScript Program to Validate a Registration Form)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form Validation</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+input {
+    margin: 8px 0;
+    padding: 6px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+</style>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (name === "") {
+        alert("Name must be filled out");
+        return false;
+    }
+
+    if (email === "" || !email.includes("@")) {
+        alert("Enter a valid email address");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+</script>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    Name:<br>
+    <input type="text" id="name"><br>
+
+    Email:<br>
+    <input type="text" id="email"><br>
+
+    Password:<br>
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>

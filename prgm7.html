@@ -1,0 +1,72 @@
+<!-- (Write a JavaScript Program to Filter and Search Data Dynamically)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Search and Filter</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+input {
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    background-color: #ecf0f1;
+    margin: 5px auto;
+    width: 250px;
+    border-radius: 5px;
+}
+</style>
+
+<script>
+function searchItem() {
+    var input = document.getElementById("search").value.toLowerCase();
+    var items = document.getElementsByClassName("item");
+
+    for (var i = 0; i < items.length; i++) {
+        var text = items[i].innerText.toLowerCase();
+        if (text.includes(input)) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+</script>
+</head>
+
+<body>
+
+<h2>Search Fruits</h2>
+
+<input type="text" id="search" onkeyup="searchItem()" placeholder="Type to search...">
+
+<ul>
+    <li class="item">Apple</li>
+    <li class="item">Banana</li>
+    <li class="item">Orange</li>
+    <li class="item">Mango</li>
+    <li class="item">Grapes</li>
+</ul>
+
+</body>
+</html>

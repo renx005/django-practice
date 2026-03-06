@@ -1,0 +1,40 @@
+<!-- (Dynamic Theme Changing Webpage)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Theme Switcher</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    padding: 100px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dark {
+    background-color: #169108;
+    color: rgb(255, 255, 255);
+}
+</style>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+</script>
+</head>
+
+<body>
+
+<h2>Theme Changer</h2>
+<button onclick="toggleTheme()">Toggle Theme</button>
+
+</body>
+</html>

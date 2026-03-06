@@ -1,0 +1,67 @@
+<!-- (Implement Image Slideshow using JavaScript and CSS Grid)
+     @ Rena Elza Viju
+     Roll No: 48
+     Date:
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Slideshow</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+}
+</style>
+
+<script>
+var images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+var index = 0;
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    document.getElementById("slide").src = images[index];
+}
+</script>
+</head>
+
+<body>
+
+<h2>Image Slideshow</h2>
+
+<div class="grid-container">
+    <img id="slide" src="img1.jpg" alt="Slideshow Image">
+    <button onclick="nextSlide()">Next</button>
+</div>
+
+</body>
+</html>
